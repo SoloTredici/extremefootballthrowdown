@@ -3,10 +3,12 @@ STATE.Name = "Ice Ball"
 if SERVER then
 	function STATE:Start(ball, samestate)
 		ball:EmitSound("vehicles/Airboat/pontoon_splash2.wav", 90, 100)
+		ball:SetFriction(0)
 	end
 
 	function STATE:End(ball)
 		ball:EmitSound("vehicles/Airboat/pontoon_impact_hard2.wav", 90, 150)
+		ball:SetFriction(1)
 	end
 
 	function STATE:PhysicsCollide(ball, hitdata, phys)
